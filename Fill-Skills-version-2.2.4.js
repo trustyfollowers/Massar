@@ -17,7 +17,7 @@
     Object.assign(t.style, {
       position: 'fixed',
       top: '30px',
-      left: '30px',
+      right: '30px',
       background: bg,
       color: '#fff',
       padding: '12px 18px',
@@ -68,13 +68,13 @@
           btnSave.click();
           toast("💾 Enregistrement automatique effectué.", "#0a7");
         } else {
-          toast("❌ Bouton Enregistrer introuvable", "#e67e22");
+          toast("❌ Bouton Enregistrer introuvable.", "#e67e22");
         }
       }, 900);
 
     } catch (e) {
       console.error(e);
-      toast("❌ Erreur lors de l'exécution", "#c00");
+      toast("❌ Erreur lors de l'exécution.", "#c00");
     } finally {
       window.__FillSkillsRunning = false;
     }
