@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Fill Massar Skills – Bookmarklet</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; text-align: center; padding: 36px; }
+    .card { border: 4px solid #000; padding: 40px; max-width: 800px; margin: auto; border-radius: 20px; } 
+    h1 {
+      font-size: 36px;
+      color: #3C87BA;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    h4 {
+      font-size: 24px;
+      color: green;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .instructions {
+      font-size: 18px;
+      line-height: 1.6;
+      color: #555;
+      text-align: left;
+    }
+    img { margin-top: 30px; cursor: grab; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Script remplissage des compétences sur Massar</h1>
+    <h4>version.2.2.4</h4>
+    <br>
+    <p class="instructions">
+      1️⃣ Glissez l’image vers la barre des favoris<br>
+      2️⃣ Ouvrez Massar, basculez vers l'évaluation des compétences d'un élève (doit être déja remplit).<br>
+      3️⃣ Cliquez sur le favori depuis la barre des favoris.<br>
+      4️⃣ Entrez le code Massar de l’élève concerné, puis cliquez sur enregistrer.
+    </p>
+
+    <!-- BOOKMARKLET -->
+    <a href="javascript:(function(){
+      if(window.__FillSkillsLoaded){
+        window.FillSkills && window.FillSkills();
+        return;
+      }
+      window.__FillSkillsLoaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jsdelivr.net/gh/oussama-cms/Massar/Fill-Skills-version-2.2.4.js?t=' + Date.now();
+      s.onload = function(){
+        window.FillSkills;
+      };
+      document.body.appendChild(s);
+    })();">
+      <img src="https://cdn-icons-png.flaticon.com/256/11970/11970662.png"
+           alt="🎓_FillSkills.2.2.4"
+           width="220"
+           height="280">
+    </a>
+  </div>
+
+</body>
+</html>
